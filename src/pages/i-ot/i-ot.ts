@@ -10,37 +10,45 @@ export class IOTPage {
 
   phone: string = '0946866793';
 
+  smsOptions = {
+    replaceLineBreaks: false, // true to replace \n by a new line, false by default
+    android: {
+          intent: 'INTENT'  // Opens Default sms app
+        //intent: '' // Sends sms without opening default sms app
+      }
+  }
+
   constructor(
     public alertCtrl: AlertController,
     private sms: SMS) {
   }
 
   button1() {
-    this.sms.send(this.phone, 'On1');
+    this.sms.send(this.phone, 'On1', this.smsOptions);
   }
 
   button2() {
-    this.sms.send(this.phone, 'Off1');
+    this.sms.send(this.phone, 'Off1', this.smsOptions);
   }
 
   button3() {
-    this.sms.send(this.phone, 'On2');
+    this.sms.send(this.phone, 'On2', this.smsOptions);
   }
 
   button4() {
-    this.sms.send(this.phone, 'Off2');
+    this.sms.send(this.phone, 'Off2', this.smsOptions);
   }
 
   button5() {
-    this.sms.send(this.phone, 'Onall');
+    this.sms.send(this.phone, 'Onall', this.smsOptions);
   }
 
   button6() {
-    this.sms.send(this.phone, 'Offall');
+    this.sms.send(this.phone, 'Offall', this.smsOptions);
   }
 
   button7() {
-    this.sms.send(this.phone, 'Open');
+    this.sms.send(this.phone, 'Open', this.smsOptions);
   }
 
   changePhone() {

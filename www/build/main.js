@@ -55763,27 +55763,34 @@ var IOTPage = (function () {
         this.alertCtrl = alertCtrl;
         this.sms = sms;
         this.phone = '0946866793';
+        this.smsOptions = {
+            replaceLineBreaks: false,
+            android: {
+                intent: 'INTENT' // Opens Default sms app
+                //intent: '' // Sends sms without opening default sms app
+            }
+        };
     }
     IOTPage.prototype.button1 = function () {
-        this.sms.send(this.phone, 'On1');
+        this.sms.send(this.phone, 'On1', this.smsOptions);
     };
     IOTPage.prototype.button2 = function () {
-        this.sms.send(this.phone, 'Off1');
+        this.sms.send(this.phone, 'Off1', this.smsOptions);
     };
     IOTPage.prototype.button3 = function () {
-        this.sms.send(this.phone, 'On2');
+        this.sms.send(this.phone, 'On2', this.smsOptions);
     };
     IOTPage.prototype.button4 = function () {
-        this.sms.send(this.phone, 'Off2');
+        this.sms.send(this.phone, 'Off2', this.smsOptions);
     };
     IOTPage.prototype.button5 = function () {
-        this.sms.send(this.phone, 'Onall');
+        this.sms.send(this.phone, 'Onall', this.smsOptions);
     };
     IOTPage.prototype.button6 = function () {
-        this.sms.send(this.phone, 'Offall');
+        this.sms.send(this.phone, 'Offall', this.smsOptions);
     };
     IOTPage.prototype.button7 = function () {
-        this.sms.send(this.phone, 'Open');
+        this.sms.send(this.phone, 'Open', this.smsOptions);
     };
     IOTPage.prototype.changePhone = function () {
         var _this = this;

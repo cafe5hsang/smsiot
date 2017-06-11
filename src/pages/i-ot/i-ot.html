@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      IOT
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page1" style="background-color:#FCFCFC;">
+  <div>
+    <img src="assets/img/K6aFU2KKQvyhrayRCDMr_240_F_99020732_guwhTaFUq51L38tlh5Hwd5O0LfsfvwaS.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+  </div>
+  <ion-list id="iOT-list4">
+    <ion-item color="balanced" id="iOT-list-item12">
+      {{phone}}
+      <button ion-button color="positive" (click)="changePhone()">
+        <ion-icon name="settings"></ion-icon>
+      </button>
+    </ion-item>
+  </ion-list>
+  <button id="iOT-button1" ion-button color="positive" block (click)="button1()">
+    Bật 1
+  </button>
+  <button id="iOT-button2" ion-button color="danger" block (click)="button2()">
+    Tắt 1
+  </button>
+  <button id="iOT-button3" ion-button color="positive" block (click)="button3()">
+    Bật 2
+  </button>
+  <button id="iOT-button4" ion-button color="danger" block (click)="button4()">
+    Tắt 2
+  </button>
+  <button id="iOT-button5" ion-button color="positive" block (click)="button5()">
+    Bật toàn bộ
+  </button>
+  <button id="iOT-button6" ion-button color="danger" block (click)="button6()">
+    Tắt toàn bộ
+  </button>
+  <button id="iOT-button7" ion-button color="positive" block (click)="button7()">
+    Open
+  </button>
+</ion-content>

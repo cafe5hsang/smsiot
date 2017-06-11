@@ -24,31 +24,38 @@ export class IOTPage {
   }
 
   button1() {
-    this.sms.send(this.phone, 'On1', this.smsOptions);
+    this.sms.send(this.phone, 'On1', this.smsOptions)
+      .then(function(res){}).catch(function(err){});
   }
 
   button2() {
-    this.sms.send(this.phone, 'Off1', this.smsOptions);
+    this.sms.send(this.phone, 'Off1', this.smsOptions)
+      .then(function(res){}).catch(function(err){});
   }
 
   button3() {
-    this.sms.send(this.phone, 'On2', this.smsOptions);
+    this.sms.send(this.phone, 'On2', this.smsOptions)
+      .then(function(res){}).catch(function(err){});
   }
 
   button4() {
-    this.sms.send(this.phone, 'Off2', this.smsOptions);
+    this.sms.send(this.phone, 'Off2', this.smsOptions)
+      .then(function(res){}).catch(function(err){});
   }
 
   button5() {
-    this.sms.send(this.phone, 'Onall', this.smsOptions);
+    this.sms.send(this.phone, 'Onall', this.smsOptions)
+      .then(function(res){}).catch(function(err){});
   }
 
   button6() {
-    this.sms.send(this.phone, 'Offall', this.smsOptions);
+    this.sms.send(this.phone, 'Offall', this.smsOptions)
+      .then(function(res){}).catch(function(err){});
   }
 
   button7() {
-    this.sms.send(this.phone, 'Open', this.smsOptions);
+    this.sms.send(this.phone, 'Open', this.smsOptions)
+      .then(function(res){}).catch(function(err){});
   }
 
   changePhone() {

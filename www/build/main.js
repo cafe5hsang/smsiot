@@ -55772,25 +55772,32 @@ var IOTPage = (function () {
         };
     }
     IOTPage.prototype.button1 = function () {
-        this.sms.send(this.phone, 'On1', this.smsOptions);
+        this.sms.send(this.phone, 'On1', this.smsOptions)
+            .then(function (res) { }).catch(function (err) { });
     };
     IOTPage.prototype.button2 = function () {
-        this.sms.send(this.phone, 'Off1', this.smsOptions);
+        this.sms.send(this.phone, 'Off1', this.smsOptions)
+            .then(function (res) { }).catch(function (err) { });
     };
     IOTPage.prototype.button3 = function () {
-        this.sms.send(this.phone, 'On2', this.smsOptions);
+        this.sms.send(this.phone, 'On2', this.smsOptions)
+            .then(function (res) { }).catch(function (err) { });
     };
     IOTPage.prototype.button4 = function () {
-        this.sms.send(this.phone, 'Off2', this.smsOptions);
+        this.sms.send(this.phone, 'Off2', this.smsOptions)
+            .then(function (res) { }).catch(function (err) { });
     };
     IOTPage.prototype.button5 = function () {
-        this.sms.send(this.phone, 'Onall', this.smsOptions);
+        this.sms.send(this.phone, 'Onall', this.smsOptions)
+            .then(function (res) { }).catch(function (err) { });
     };
     IOTPage.prototype.button6 = function () {
-        this.sms.send(this.phone, 'Offall', this.smsOptions);
+        this.sms.send(this.phone, 'Offall', this.smsOptions)
+            .then(function (res) { }).catch(function (err) { });
     };
     IOTPage.prototype.button7 = function () {
-        this.sms.send(this.phone, 'Open', this.smsOptions);
+        this.sms.send(this.phone, 'Open', this.smsOptions)
+            .then(function (res) { }).catch(function (err) { });
     };
     IOTPage.prototype.changePhone = function () {
         var _this = this;

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AlertController } from 'ionic-angular';
+import { AlertController, ToastController } from 'ionic-angular';
 import { SMS } from '@ionic-native/sms';
 
 @Component({
@@ -8,7 +8,7 @@ import { SMS } from '@ionic-native/sms';
 })
 export class IOTPage {
 
-  phone: string = '0946866793';
+  phone: string = '0982969872';
 
   smsOptions = {
     replaceLineBreaks: false, // true to replace \n by a new line, false by default
@@ -20,42 +20,51 @@ export class IOTPage {
 
   constructor(
     public alertCtrl: AlertController,
+    public toastCtrl: ToastController, 
     private sms: SMS) {
   }
 
   button1() {
     this.sms.send(this.phone, 'On1')
-      .then(function(res){}).catch(function(err){});
+      .then(function(res){ this.myToast(); }).catch(function(err){});
   }
 
   button2() {
     this.sms.send(this.phone, 'Off1')
-      .then(function(res){}).catch(function(err){});
+      .then(function(res){ this.myToast(); }).catch(function(err){});
   }
 
   button3() {
     this.sms.send(this.phone, 'On2')
-      .then(function(res){}).catch(function(err){});
+      .then(function(res){ this.myToast(); }).catch(function(err){});
   }
 
   button4() {
     this.sms.send(this.phone, 'Off2')
-      .then(function(res){}).catch(function(err){});
+      .then(function(res){ this.myToast(); }).catch(function(err){});
   }
 
   button5() {
     this.sms.send(this.phone, 'Onall')
-      .then(function(res){}).catch(function(err){});
+      .then(function(res){ this.myToast(); }).catch(function(err){});
   }
 
   button6() {
     this.sms.send(this.phone, 'Offall')
-      .then(function(res){}).catch(function(err){});
+      .then(function(res){ this.myToast(); }).catch(function(err){});
   }
 
   button7() {
     this.sms.send(this.phone, 'Open')
-      .then(function(res){}).catch(function(err){});
+      .then(function(res){ this.myToast(); }).catch(function(err){});
+  }
+
+  myToast() {
+    let toast = this.toastCtrl.create({
+      message: 'Success',
+      duration: 2000
+    });
+    toast.present();
   }
 
   changePhone() {

@@ -55014,7 +55014,7 @@ function SlideEdgeGesture_tsickle_Closure_declarations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_53__components_modal_modal_controller__ = __webpack_require__(135);
 /* unused harmony reexport ModalController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__ = __webpack_require__(68);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_54__components_nav_nav__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_55__components_nav_nav_pop__ = __webpack_require__(66);
 /* unused harmony reexport NavPop */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_56__components_nav_nav_pop_anchor__ = __webpack_require__(137);
@@ -55097,7 +55097,7 @@ function SlideEdgeGesture_tsickle_Closure_declarations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_94__components_toast_toast_component__ = __webpack_require__(87);
 /* unused harmony reexport ToastCmp */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_95__components_toast_toast_controller__ = __webpack_require__(159);
-/* unused harmony reexport ToastController */
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "e", function() { return __WEBPACK_IMPORTED_MODULE_95__components_toast_toast_controller__["a"]; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_96__components_toggle_toggle__ = __webpack_require__(161);
 /* unused harmony reexport Toggle */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_97__components_toolbar_toolbar_footer__ = __webpack_require__(163);
@@ -55131,7 +55131,7 @@ function SlideEdgeGesture_tsickle_Closure_declarations() {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_110__platform_dom_controller__ = __webpack_require__(8);
 /* unused harmony reexport DomController */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_111__platform_platform__ = __webpack_require__(3);
-/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return __WEBPACK_IMPORTED_MODULE_111__platform_platform__["a"]; });
 /* unused harmony reexport setupPlatform */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_112__tap_click_haptic__ = __webpack_require__(35);
 /* unused harmony reexport Haptic */
@@ -55759,10 +55759,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var IOTPage = (function () {
-    function IOTPage(alertCtrl, sms) {
+    function IOTPage(alertCtrl, toastCtrl, sms) {
         this.alertCtrl = alertCtrl;
+        this.toastCtrl = toastCtrl;
         this.sms = sms;
-        this.phone = '0946866793';
+        this.phone = '0982969872';
         this.smsOptions = {
             replaceLineBreaks: false,
             android: {
@@ -55773,31 +55774,38 @@ var IOTPage = (function () {
     }
     IOTPage.prototype.button1 = function () {
         this.sms.send(this.phone, 'On1')
-            .then(function (res) { }).catch(function (err) { });
+            .then(function (res) { this.myToast(); }).catch(function (err) { });
     };
     IOTPage.prototype.button2 = function () {
         this.sms.send(this.phone, 'Off1')
-            .then(function (res) { }).catch(function (err) { });
+            .then(function (res) { this.myToast(); }).catch(function (err) { });
     };
     IOTPage.prototype.button3 = function () {
         this.sms.send(this.phone, 'On2')
-            .then(function (res) { }).catch(function (err) { });
+            .then(function (res) { this.myToast(); }).catch(function (err) { });
     };
     IOTPage.prototype.button4 = function () {
         this.sms.send(this.phone, 'Off2')
-            .then(function (res) { }).catch(function (err) { });
+            .then(function (res) { this.myToast(); }).catch(function (err) { });
     };
     IOTPage.prototype.button5 = function () {
         this.sms.send(this.phone, 'Onall')
-            .then(function (res) { }).catch(function (err) { });
+            .then(function (res) { this.myToast(); }).catch(function (err) { });
     };
     IOTPage.prototype.button6 = function () {
         this.sms.send(this.phone, 'Offall')
-            .then(function (res) { }).catch(function (err) { });
+            .then(function (res) { this.myToast(); }).catch(function (err) { });
     };
     IOTPage.prototype.button7 = function () {
         this.sms.send(this.phone, 'Open')
-            .then(function (res) { }).catch(function (err) { });
+            .then(function (res) { this.myToast(); }).catch(function (err) { });
+    };
+    IOTPage.prototype.myToast = function () {
+        var toast = this.toastCtrl.create({
+            message: 'Success',
+            duration: 2000
+        });
+        toast.present();
     };
     IOTPage.prototype.changePhone = function () {
         var _this = this;
@@ -55834,6 +55842,7 @@ IOTPage = __decorate([
         selector: 'page-i-ot',template:/*ion-inline-start:"/home/cafe5hsang/study/ionic/smsiot/src/pages/i-ot/i-ot.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>\n      IOT\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n<ion-content padding id="page1" style="background-color:#FCFCFC;">\n  <div>\n    <img src="assets/img/K6aFU2KKQvyhrayRCDMr_240_F_99020732_guwhTaFUq51L38tlh5Hwd5O0LfsfvwaS.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />\n  </div>\n  <ion-list id="iOT-list4">\n    <ion-item color="balanced" id="iOT-list-item12">\n      {{phone}}\n      <button ion-button color="positive" (click)="changePhone()">\n        <ion-icon name="settings"></ion-icon>\n      </button>\n    </ion-item>\n  </ion-list>\n  <button id="iOT-button1" ion-button color="positive" block (click)="button1()">\n    Bật 1\n  </button>\n  <button id="iOT-button2" ion-button color="danger" block (click)="button2()">\n    Tắt 1\n  </button>\n  <button id="iOT-button3" ion-button color="positive" block (click)="button3()">\n    Bật 2\n  </button>\n  <button id="iOT-button4" ion-button color="danger" block (click)="button4()">\n    Tắt 2\n  </button>\n  <button id="iOT-button5" ion-button color="positive" block (click)="button5()">\n    Bật toàn bộ\n  </button>\n  <button id="iOT-button6" ion-button color="danger" block (click)="button6()">\n    Tắt toàn bộ\n  </button>\n  <button id="iOT-button7" ion-button color="positive" block (click)="button7()">\n    Open\n  </button>\n</ion-content>\n'/*ion-inline-end:"/home/cafe5hsang/study/ionic/smsiot/src/pages/i-ot/i-ot.html"*/
     }),
     __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["d" /* AlertController */],
+        __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* ToastController */],
         __WEBPACK_IMPORTED_MODULE_2__ionic_native_sms__["a" /* SMS */]])
 ], IOTPage);
 
@@ -74740,13 +74749,13 @@ var MyApp = (function () {
     return MyApp;
 }());
 __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */]),
-    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* Nav */])
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_9" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */]),
+    __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Nav */])
 ], MyApp.prototype, "navCtrl", void 0);
 MyApp = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({template:/*ion-inline-start:"/home/cafe5hsang/study/ionic/smsiot/src/app/app.html"*/'<ion-menu [content]="mainContent">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>\n        Menu\n      </ion-title>\n    </ion-toolbar>\n  </ion-header>\n  <ion-content id="side-menu21">\n    <ion-list id="menu-list1">\n      <ion-item color="none" id="menu-list-item2">\n        Home\n      </ion-item>\n    </ion-list>\n  </ion-content>\n</ion-menu>\n\n<ion-nav #mainContent [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"/home/cafe5hsang/study/ionic/smsiot/src/app/app.html"*/
     }),
-    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
 ], MyApp);
 
 //# sourceMappingURL=app.component.js.map
